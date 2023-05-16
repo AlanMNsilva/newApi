@@ -12,20 +12,20 @@ mvn spring-boot:run
 http://localhost:8080/swagger-ui.html
 ```
 
-#Database 
+#### Database 
 MySql 8.0 with default cofiguration: 
 
 ```
 jdbc:mysql://localhost:3306/sakila
 ```
 
-# Java Version
+### Java Version
 
 ```
 11
 ```
 
-#Test
+### Test
 Contains some simple unit tests and integration tests.
 
 To run the tests:

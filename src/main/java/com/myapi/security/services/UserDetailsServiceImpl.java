@@ -19,9 +19,11 @@ import javax.persistence.PersistenceContext;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
-  @Autowired
-  UserRepository userRepository;
+  private final UserRepository userRepository;
 
+  public UserDetailsServiceImpl(UserRepository userRepository) {
+    this.userRepository = userRepository;
+  }
   @Transactional
   public UserDetails loadUserByUsernameAndCompanyCode(String idUserName) throws UsernameNotFoundException {
     User user = userRepository.findById(Long.parseLong(idUserName))

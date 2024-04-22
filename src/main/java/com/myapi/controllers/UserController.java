@@ -17,7 +17,7 @@ import com.myapi.dto.UserDTO;
 import com.myapi.services.UserService;
 /**
  * To use this controller fully authentication is required.
- * On Header must have a Authorization param with a Bearer token valid and not expired.
+ * On Header must have an Authorization param with a Bearer token valid and not expired.
  */
 
 @CrossOrigin(origins = "*", maxAge = 3600)

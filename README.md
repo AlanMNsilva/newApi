@@ -1,4 +1,4 @@
-# Default Springboot API using spring resources
+# Default Springboot API using spring resources and Auth
 
 ### This code is free to use.
 

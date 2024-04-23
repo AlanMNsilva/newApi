@@ -25,8 +25,10 @@ import com.myapi.services.UserService;
 @RequestMapping("api")
 public class UserController {
 
-    @Autowired
-    UserService userService;
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+    private final UserService userService;
 
     @ApiOperation(value = "URI: /api/user",
             produces = MediaType.APPLICATION_JSON_VALUE,

@@ -42,28 +42,28 @@ import com.myapi.security.services.UserDetailsServiceImpl;
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
-  @Autowired
-  AuthenticationManager authenticationManager;
 
-  @Autowired
-  UserRepository userRepository;
+  private final AuthenticationManager authenticationManager;
+  private final UserRepository userRepository;
 
+  private final PasswordEncoder encoder;
 
-  @Autowired
-  PasswordEncoder encoder;
-
-  @Autowired
-  private UserDetailsServiceImpl userDetailsService;
-
-  private User user;
-
+  private final UserDetailsServiceImpl userDetailsService;
+    private User user;
   private RefreshToken refreshToken;
+  private final JwtUtils jwtUtils;
+  private final RefreshTokenService refreshTokenService;
 
-  @Autowired
-  JwtUtils jwtUtils;
 
-  @Autowired
-  RefreshTokenService refreshTokenService;
+    public AuthController(AuthenticationManager authenticationManager, UserRepository userRepository, PasswordEncoder encoder, UserDetailsServiceImpl userDetailsService, RefreshToken refreshToken, JwtUtils jwtUtils, RefreshTokenService refreshTokenService) {
+        this.authenticationManager = authenticationManager;
+        this.userRepository = userRepository;
+        this.encoder = encoder;
+        this.userDetailsService = userDetailsService;
+        this.refreshToken = refreshToken;
+        this.jwtUtils = jwtUtils;
+        this.refreshTokenService = refreshTokenService;
+    }
 
     @ApiOperation(value = "URI: /api/auth/signin",
             produces = MediaType.APPLICATION_JSON_VALUE,

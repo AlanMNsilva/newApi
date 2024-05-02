@@ -24,8 +24,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/noauth")
 public class UserControllerNoAuth {
 
-    @Autowired
-    UserService userService;
+
+    private final UserService userService;
+
+    public UserControllerNoAuth(UserService userService) {
+        this.userService = userService;
+    }
 
     @ApiOperation(value = "URI: /api/noauth/user",
             produces = MediaType.APPLICATION_JSON_VALUE,

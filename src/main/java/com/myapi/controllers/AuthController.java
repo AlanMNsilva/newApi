@@ -12,7 +12,6 @@ import com.myapi.payload.request.LoginRequest;
 import com.myapi.payload.request.TokenRefreshRequest;
 import com.myapi.services.exceptions.TokenRefreshException;
 import io.swagger.annotations.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

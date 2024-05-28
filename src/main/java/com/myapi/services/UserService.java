@@ -10,7 +10,7 @@ import com.myapi.repository.UserRepository;
 import com.myapi.services.exceptions.UserBadRequestException;
 import com.myapi.services.exceptions.UserNotFoundException;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -12,7 +12,6 @@ import com.myapi.models.User;
 import com.myapi.repository.RefreshTokenRepository;
 import com.myapi.repository.UserRepository;
 import com.myapi.services.exceptions.TokenRefreshException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

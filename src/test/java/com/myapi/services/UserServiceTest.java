@@ -12,7 +12,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentMatchers;
 import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -24,11 +23,15 @@ import static org.mockito.Mockito.when;
 @DisplayName("UserServiceTest")
 public class UserServiceTest extends ApplicationConfigTest {
 
-    @Autowired
-    UserService userService;
+
+    private final UserService userService;
 
     @MockBean
     UserRepository userRepository;
+
+    public UserServiceTest(UserService userService) {
+        this.userService = userService;
+    }
 
     @Test
     public void callBadRequestWhenFirstNameorLastNameIsEmpty()  {

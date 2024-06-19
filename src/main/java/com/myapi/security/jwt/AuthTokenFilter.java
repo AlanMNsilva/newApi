@@ -24,10 +24,15 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 
   private JwtUtils jwtUtils;
 
-  @Autowired
+
   private UserDetailsServiceImpl userDetailsService;
 
   public AuthTokenFilter() {
+  }
+
+  public AuthTokenFilter(JwtUtils jwtUtils, UserDetailsServiceImpl userDetailsService) {
+    this.jwtUtils = jwtUtils;
+    this.userDetailsService = userDetailsService;
   }
 
   public AuthTokenFilter(JwtUtils jwtUtils) {

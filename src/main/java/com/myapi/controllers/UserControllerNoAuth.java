@@ -105,5 +105,18 @@ public class UserControllerNoAuth {
 
     }
 
+    @ApiOperation(value = "URI: /api/noauth/user/version",
+            produces = MediaType.APPLICATION_JSON_VALUE,
+            notes = "Fetch API Version")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "API is working "),
+            @ApiResponse(code = 500, message = "Server side exception"),
+    })
+    @RequestMapping( method = RequestMethod.GET)
+    public ResponseEntity<?> findApiVersion(@PathVariable Long id){
+   return ResponseEntity.status(HttpStatus.OK).body("API V1");
+
+    }
+
 
 }

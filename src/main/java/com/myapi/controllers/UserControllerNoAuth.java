@@ -105,16 +105,16 @@ public class UserControllerNoAuth {
 
     }
 
-    @ApiOperation(value = "URI: /api/noauth/user/version",
+    @ApiOperation(value = "URI: /api/noauth/healthcheck",
             produces = MediaType.APPLICATION_JSON_VALUE,
-            notes = "Fetch API Version")
+            notes = "Health Check Status")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "API is working "),
             @ApiResponse(code = 500, message = "Server side exception"),
     })
     @RequestMapping( method = RequestMethod.GET)
     public ResponseEntity<?> findApiVersion(@PathVariable Long id){
-   return ResponseEntity.status(HttpStatus.OK).body("API V1");
+        return ResponseEntity.status(HttpStatus.OK).body("API V1 - Health status");
 
     }
 
